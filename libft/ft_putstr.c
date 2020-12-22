@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int 	ft_putstr(char const *str)
+int		ft_putstr(char const *str)
 {
 	int			sum;
 	const char	*ptr;

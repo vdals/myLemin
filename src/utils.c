@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/22 15:13:19 by jnydia            #+#    #+#             */
+/*   Updated: 2020/12/22 15:13:19 by jnydia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 /*
 **	Create unique hash key.
@@ -5,6 +16,19 @@
 **	key - 30;
 */
 #include "lem_in.h"
+
+void	card_print(t_state *state)
+{
+	t_card		*tmp;
+
+	tmp = state->card;
+	while (tmp)
+	{
+		ft_printf("%s\n", tmp->content);
+		tmp = tmp->next;
+	}
+	ft_printf("\n");
+}
 
 int		hash(int size, char *name)
 {

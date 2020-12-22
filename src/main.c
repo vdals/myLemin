@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/22 14:26:56 by jnydia            #+#    #+#             */
+/*   Updated: 2020/12/22 14:43:00 by jnydia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
 void	init_struct(t_state *state)
@@ -16,7 +28,7 @@ void	init_struct(t_state *state)
 
 void	state_free(t_state *state)
 {
-	int 	i;
+	int		i;
 
 	i = 0;
 	if (state)

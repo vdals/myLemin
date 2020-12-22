@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   suurballe.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/22 14:51:21 by jnydia            #+#    #+#             */
+/*   Updated: 2020/12/22 14:51:21 by jnydia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
 static void		edges_inverse(t_state *state, t_path *first_node,
-								 t_path *second_node)
+								t_path *second_node)
 {
 	int		node_hash;
 	t_edge	*edge_find;

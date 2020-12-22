@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   copy_edges_nodes.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/22 14:42:05 by jnydia            #+#    #+#             */
+/*   Updated: 2020/12/22 14:42:24 by jnydia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
 t_node		*node_copy(t_state *state, t_node *original)
@@ -20,7 +32,7 @@ t_node		*node_copy(t_state *state, t_node *original)
 }
 
 t_edge		*edges_copy(t_state *state, t_edge *edge_copy,
-						  t_edge *orig_edge)
+							t_edge *orig_edge)
 {
 	t_edge	*tmp;
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   nodes.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/22 14:57:37 by jnydia            #+#    #+#             */
+/*   Updated: 2020/12/22 14:57:38 by jnydia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
 static void		node_init(t_node *node_lst, char **node_matrix)
@@ -57,7 +69,8 @@ static int		check_repeats(t_node *begin_node, char **node_matrix)
 **	we also write to the (s) of (e).
 */
 
-static void		node_recording(t_state *state, char **node_matrix, t_coord *point)
+static void		node_recording(t_state *state, char **node_matrix, \
+												t_coord *point)
 {
 	t_node *node_lst;
 

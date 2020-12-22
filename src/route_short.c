@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   route_short.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/22 14:59:03 by jnydia            #+#    #+#             */
+/*   Updated: 2020/12/22 14:59:04 by jnydia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
 t_route				*new_route(t_state *state)
@@ -18,7 +30,8 @@ t_route				*new_route(t_state *state)
 	return (route_tmp);
 }
 
-static void			mark_link(t_state *state, char *first_node, char *second_node)
+static void			mark_link(t_state *state, char *first_node, \
+												char *second_node)
 {
 	int			hash_key;
 	t_edge		*edge_find;
@@ -36,7 +49,8 @@ static void			mark_link(t_state *state, char *first_node, char *second_node)
 	edge_find->use_in_routes++;
 }
 
-static void			new_path(t_state *state, t_route *route_current, t_path *tmp_path)
+static void			new_path(t_state *state, t_route *route_current, \
+												t_path *tmp_path)
 {
 	t_path		*back;
 	t_node		*node_find;

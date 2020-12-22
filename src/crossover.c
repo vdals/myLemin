@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   crossover.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/22 15:00:49 by jnydia            #+#    #+#             */
+/*   Updated: 2020/12/22 15:12:48 by jnydia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
-static int		reverse_edge_check(t_state *state, char *node_name, char *edge_name)
+static int		reverse_edge_check(t_state *state, char *node_name, \
+													char *edge_name)
 {
 	int			hash_key;
 	t_edge		*edge_find;
@@ -56,15 +69,15 @@ int				find_crossover(t_state *state, t_route *route)
 	path_tmp = route->path;
 	while (path_tmp->f)
 	{
-		node_find = state->node_matrix[hash(state->nodes_total, path_tmp->name)];
+		node_find = state->node_matrix[hash(state->nodes_total, \
+											path_tmp->name)];
 		while (ft_strcmp(path_tmp->name, node_find->name) != 0)
 			node_find = node_find->other_hash;
 		edge_find = node_find->begin_edge;
 		while (ft_strcmp(edge_find->name, path_tmp->f->name) != 0)
 			edge_find = edge_find->next;
-		if (edge_find->use_in_routes > 1 ||
-			(edge_find->use_in_routes >= 1 && reverse_edge_check(state, edge_find->name,
-																 node_find->name)))
+		if (edge_find->use_in_routes > 1 || (edge_find->use_in_routes >= 1\
+		&& reverse_edge_check(state, edge_find->name, node_find->name)))
 		{
 			rt = 1;
 			crossed_edges_remove(state, node_find, edge_find, path_tmp);

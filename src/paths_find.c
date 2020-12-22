@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   paths_find.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/22 15:11:16 by jnydia            #+#    #+#             */
+/*   Updated: 2020/12/22 15:11:16 by jnydia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
 /*
@@ -35,39 +47,31 @@ static int		solve_compare(t_state *state)
 
 static void		extend_ants(t_state *state, t_solve *solve, int max_len)
 {
-	int		n;
-	int		s;
-	t_route	*tmp;
+	int		k;
+	int		len;
+	t_route	*r_tmp;
 
-	s = max_len - 1;
-	n = state->ants_total;
-	tmp = solve->routes;
-	while (tmp && n > 0 && solve->routes_total != 1)
+	len = max_len - 1;
+	k = state->ants_total;
+	r_tmp = solve->routes;
+	while (r_tmp && k > 0 && solve->routes_total != 1)
 	{
-		if (tmp->use)
+		if (r_tmp->use)
 		{
-			if (n < max_len - tmp->len)
-				tmp->ants = n;
-			else
-				tmp->ants = max_len - tmp->len;
-			n -= tmp->ants;
+			r_tmp->ants = (k < max_len - r_tmp->len) ? k : max_len - r_tmp->len;
+			k -= r_tmp->ants;
 		}
-		tmp = tmp->next;
+		r_tmp = r_tmp->next;
 	}
-	if (n % solve->routes_total == 0)
-		s += n / solve->routes_total;
-	else
-		s += n / solve->routes_total + 1;
-	tmp = solve->routes;
-	while (n-- > 0)
+	len += (k % solve->routes_total == 0) ? k / solve->routes_total : \
+											k / solve->routes_total + 1;
+	r_tmp = solve->routes;
+	while (k-- > 0)
 	{
-		++tmp->ants;
-		if (tmp->next)
-			tmp = tmp->next;
-		else
-			tmp = solve->routes;
+		++r_tmp->ants;
+		r_tmp = (r_tmp->next) ? r_tmp->next : solve->routes;
 	}
-	solve->steps = s;
+	solve->steps = len;
 }
 
 static void		count_steps(t_state *state, t_solve *solve)

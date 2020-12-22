@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bellman_ford.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/22 14:30:39 by jnydia            #+#    #+#             */
+/*   Updated: 2020/12/22 14:44:01 by jnydia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
 /*
@@ -66,7 +78,7 @@ void			add_to_queue(t_state *state, t_node *next_for_q,
 			find_node->bfs = node_edges->weight;
 		else
 			find_node->bfs = find_node->prev->bfs +
-							 node_edges->weight;
+							node_edges->weight;
 		next_for_q = next_for_q->queue;
 		next_for_q->in_queue = 1;
 	}

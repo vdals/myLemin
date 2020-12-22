@@ -9,7 +9,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 
 INCLUDE = -I./include
-INCLUDE += -I./libft/include
+INCLUDE += -I./libft
 
 HEADERS = include/lem_in.h
 

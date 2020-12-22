@@ -1,24 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_ants_and_print.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/22 14:34:09 by jnydia            #+#    #+#             */
+/*   Updated: 2020/12/22 14:49:17 by jnydia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
-void	card_print(t_state *state)
+void			print_routes(t_state *state)
 {
-	t_card		*tmp;
-
-	tmp = state->card;
-	while (tmp)
-	{
-		ft_printf("%s\n", tmp->content);
-		tmp = tmp->next;
-	}
-	ft_printf("\n");
-}
-
-void	print_routes(t_state *state)
-{
-	int 		i;
+	int			i;
 	t_path		*tmp;
 	t_route		*tmp2;
-	t_solve 	*tmp3;
+	t_solve		*tmp3;
 
 	tmp3 = state->solve;
 	tmp2 = tmp3->routes;

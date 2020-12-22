@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   other_routes_find.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/22 14:50:58 by jnydia            #+#    #+#             */
+/*   Updated: 2020/12/22 14:50:58 by jnydia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
 static t_edge	*in_route_edges_find(t_node *node, int number)
@@ -17,7 +29,8 @@ static t_edge	*in_route_edges_find(t_node *node, int number)
 	return (NULL);
 }
 
-static int		make_paths(t_state *state, t_path **new_path, t_edge **next_node)
+static int		make_paths(t_state *state, t_path **new_path,
+											t_edge **next_node)
 {
 	t_node	*find_node;
 

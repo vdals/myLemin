@@ -1,9 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lem_in.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/22 14:16:04 by jnydia            #+#    #+#             */
+/*   Updated: 2020/12/22 14:16:06 by jnydia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LEM_IN_H
 # define LEM_IN_H
-
-# include "../libft/libft.h"
-//# include "errno.h"
-//# include "stdio.h"
+# include "libft.h"
 
 typedef struct		s_coord
 {
@@ -70,8 +79,8 @@ typedef struct		s_state
 {
 	int				ants_total;
 	int				nodes_total;
-	int 			flag[32];
-	int 			fd;
+	int				flag[32];
+	int				fd;
 	t_card			*card;
 	t_node			*begin_node;
 	t_node			*s;
@@ -112,7 +121,5 @@ void				add_to_queue(t_state *state, t_node *next_for_q,
 t_route				*new_route(t_state *state);
 t_node				*node_copy(t_state *state, t_node *original);
 t_edge				*edges_copy(t_state *state, t_edge *edge_copy,
-								  t_edge *orig_edge);
-
-
+						t_edge *orig_edge);
 #endif

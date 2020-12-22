@@ -12,21 +12,6 @@
 
 #include "libft.h"
 
-/*int				ft_putstr(const char *str)
-{
-	int			sum;
-	const char	*ptr;
-
-	ptr = str;
-	sum = 0;
-	while (*ptr)
-	{
-		write(1, ptr++, 1);
-		sum++;
-	}
-	return (sum);
-}*/
-
 int				ft_putchar(char c)
 {
 	write(1, &c, 1);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   edges.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/22 14:32:32 by jnydia            #+#    #+#             */
+/*   Updated: 2020/12/22 14:49:01 by jnydia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
 static void		init_edge(t_edge *edge, char *edge_name)
@@ -9,7 +21,8 @@ static void		init_edge(t_edge *edge, char *edge_name)
 	edge->weight = 1;
 }
 
-static int		new_edge_create(t_state *state, t_node *find_node, char *node_edge)
+static int		new_edge_create(t_state *state, t_node *find_node,
+					char *node_edge)
 {
 	t_edge *list_edge;
 
@@ -69,7 +82,8 @@ static void		create_hash_table(t_state *state)
 
 	hash_key = -1;
 	tmp = state->begin_node;
-	if (!(state->node_matrix = (t_node**)malloc(sizeof(t_node*) * (state->nodes_total * 4))))
+	if (!(state->node_matrix = (t_node**)malloc(sizeof(t_node*) *
+								(state->nodes_total * 4))))
 		error(state);
 	while (hash_key < state->nodes_total * 4 - 1)
 		state->node_matrix[++hash_key] = NULL;
