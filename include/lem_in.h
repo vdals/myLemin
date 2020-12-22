@@ -6,7 +6,7 @@
 /*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 14:16:04 by jnydia            #+#    #+#             */
-/*   Updated: 2020/12/22 14:16:06 by jnydia           ###   ########.fr       */
+/*   Updated: 2020/12/22 18:21:04 by jnydia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ typedef struct		s_node
 	int				links;
 	int				in_queue;
 	int				bfs;
+	int				x;
+	int				y;
 	t_edge			*begin_edge;
 	struct s_node	*other_hash;
 	struct s_node	*node_copy;

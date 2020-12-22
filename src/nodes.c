@@ -6,7 +6,7 @@
 /*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 14:57:37 by jnydia            #+#    #+#             */
-/*   Updated: 2020/12/22 14:57:38 by jnydia           ###   ########.fr       */
+/*   Updated: 2020/12/22 18:27:52 by jnydia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static void		node_init(t_node *node_lst, char **node_matrix)
 	node_lst->other_hash = NULL;
 	node_lst->node_copy = NULL;
 	node_lst->queue = NULL;
+	node_lst->x = ft_atoi(node_matrix[1]);
+	node_lst->y = ft_atoi(node_matrix[2]);
 }
 
 static int		node_check(char **node_matrix)
@@ -56,6 +58,9 @@ static int		check_repeats(t_node *begin_node, char **node_matrix)
 	while (tmp)
 	{
 		if (!ft_strcmp(tmp->name, node_matrix[0]))
+			return (1);
+		if (tmp->x == ft_atoi(node_matrix[1]) && \
+			tmp->y == ft_atoi(node_matrix[2]))
 			return (1);
 		tmp = tmp->next;
 	}
