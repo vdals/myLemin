@@ -6,7 +6,7 @@
 /*   By: jnydia <jnydia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 14:58:11 by jnydia            #+#    #+#             */
-/*   Updated: 2020/12/22 14:58:12 by jnydia           ###   ########.fr       */
+/*   Updated: 2020/12/22 17:34:27 by jnydia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ static int			check_ants(t_state *state, char *line)
 			return (0);
 		++i;
 	}
-	state->ants_total = ft_atoi(line);
+	if ((state->ants_total = ft_atoi(line)) < 0)
+		error(state);
 	if (!state->ants_total)
 		error(state);
 	return (1);
